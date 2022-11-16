@@ -20,17 +20,16 @@ Then source the workspace
 source ~/ws_gripper/install/setup.bash
 ```
 
-
 ## Usage
-<!-- Bring up the gripper
+Bring up the gripper. Enter the launch folder
 ```
-roslaunch onrobot_sg bringup_gripper.launch
+ros2 launch bringup_gripper.launch.py
 ```
-Control the gripper via rosservice, where desired width is between 110mm and 800 mm
+Control the gripper via rosservice, where desired width is between 110mm and 750 mm
 ```
-rosservice call /gripper_cmd "cmd_wd: desired_width"
+ros2 service call /gripper_command onrobot_sg_ros2_srv/srv/Sg desiredwidth:\ desired width\
 ```
-Control via client service
+Control via client service. Go to client.py file and change the desired width value then call:
 ```
-rosrun onrobot_sg cmd_client.py desired_width
-``` -->
+ros2 run onrobot_sg_ros2 gripper_cli
+```
