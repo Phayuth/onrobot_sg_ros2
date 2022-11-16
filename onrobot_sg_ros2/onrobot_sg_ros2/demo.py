@@ -1,4 +1,4 @@
-from sgdrv import SG
+from driver import SG
 
 sg = SG("192.168.1.1",502) #init connection to the gripper
 

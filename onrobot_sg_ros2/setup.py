@@ -21,7 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
         'gripper_srv = onrobot_sg_ros2.server:main',
-        # 'msg_sub = custom_srv_msg_use_py.msg_sub:main',
+        'gripper_cli = onrobot_sg_ros2.client:main',
         ],
     },
 )
