@@ -1,5 +1,6 @@
 from setuptools import setup
-
+# from glob import glob
+# import os
 package_name = 'onrobot_sg_ros2'
 
 setup(
@@ -10,6 +11,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        # (os.path.join('share',package_name,'launch'),glob('launch/*.py')), use this to install launch.py so we call use : ros2 launch name_pkg name_launch https://www.youtube.com/watch?v=RDoig5qEHRM
     ],
     install_requires=['setuptools'],
     zip_safe=True,
