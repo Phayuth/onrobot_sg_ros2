@@ -3,6 +3,17 @@ from .driver import SG
 import rclpy
 from rclpy.node import Node
 
+class bcolors:
+	HEADER    = '\033[95m'
+	OKBLUE    = '\033[94m'
+	OKCYAN    = '\033[96m'
+	OKGREEN   = '\033[92m'
+	WARNING   = '\033[93m'
+	FAIL      = '\033[91m'
+	ENDC      = '\033[0m'
+	BOLD      = '\033[1m'
+	UNDERLINE = '\033[4m'
+
 class Service(Node):
 
 	def __init__(self):
@@ -13,7 +24,7 @@ class Service(Node):
 		self.model_id = 3
 		self.gent     = True
 
-		self.get_logger().info("Setting Up Connection")
+		self.get_logger().info(bcolors.OKGREEN + "Setting Up Connection" + bcolors.ENDC)
 		self.sg = SG(self.ip,self.port)
 		self.sg.set_model_id(self.model_id)
 		self.sg.set_init()
